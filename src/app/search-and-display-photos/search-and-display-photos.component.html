@@ -1,0 +1,19 @@
+<div>
+    <!--Welcome {{name}}!
+    <h2>{{greetUser()}}</h2>-->
+    <input #searchInput type="text">
+    <button (click)="onClick(searchInput)">Search</button>
+    <br>
+    {{status}}
+    <h2>Display photos</h2>
+        <div *ngFor="let item of photos| keyvalue">
+            
+            <div *ngIf="item.key=='items'">
+                <div *ngFor="let ln of item.value">
+                    <img  src={{ln.link}} width="150" height="70">
+                </div>
+            </div>
+        <!-- {{item.key}}--{{item.value}}
+        {{item.value | keyvalue| json}}-->
+        </div>
+  </div>
